@@ -28,6 +28,11 @@
   <link rel="mask-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/safari-pinned-tab.svg"
     color="#7952b3">
   <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon.ico">
+  <!-- syntax highlight -->
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
   <meta name="theme-color" content="#7952b3">
 
 
@@ -45,6 +50,14 @@
         font-size: 3.5rem;
       }
     }
+    .lead{
+      margin-bottom: -12px;
+    }
+    .bd-heading + div > * + * {
+    margin-top: 0 !important;
+    border-top: 0.3px solid silver;
+    padding-top: 2rem;
+  }
   </style>
 
 
@@ -72,15 +85,15 @@
             <li><a class="d-inline-flex align-items-center rounded" href="#javascript">Javascript</a></li>
             <li><a class="d-inline-flex align-items-center rounded" href="#python">Python</a></li>
             <li><a class="d-inline-flex align-items-center rounded" href="#bash">Bash</a></li>
-            <li><a class="d-inline-flex align-items-center rounded" href="#figures">Figures</a></li>
           </ul>
         </li>
         <li class="my-2">
           <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false"
             data-bs-target="#forms-collapse" aria-controls="forms-collapse">Ethical Hacking</button>
           <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
-            <li><a class="d-inline-flex align-items-center rounded" href="#overview">Overview</a></li>
-            <li><a class="d-inline-flex align-items-center rounded" href="#disabled-forms">Disabled forms</a></li>
+            <li><a class="d-inline-flex align-items-center rounded" href="#dorking">Dorking</a></li>
+            <li><a class="d-inline-flex align-items-center rounded" href="#injections">Injections</a></li>
+            <li><a class="d-inline-flex align-items-center rounded" href="#xss">XSS</a></li>
           </ul>
         </li>
       </ul>
@@ -97,82 +110,115 @@
 
         <div>
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
-            <p class="h4"><code>Math.random() >= 0.5?console.log('heads'):console.log('tails');</code></p>
+            <p class="h2">Heads or Tails?</p>
             <p class="lead">
               Divides a random number between 0 and 1, checks if it is lesser or greater than 0.5(thus giving 50-50
               probability), and returns heads or tails.
             </p>
+            <p class="h4">
+              <pre>
+                <code class="javascript">
+ Math.random() >= 0.5?console.log('heads'):console.log('tails');
+            </code>
+          </pre>
+        </p>
           </div>
 
           <div class="bd-example">
-            <p class="h1">Reverse a string</p>
-            <p class="h4"><code>str.split('').reverse().join('');</code></p>
+            <p class="h2">Reverse a string</p>
             <p class="lead">
               Where <code>str</code> is the string to reverse.
             </p>
+            <p class="h4">
+              <pre>
+              <code class="javascript">
+ str.split('').reverse().join('');
+          </code>
+        </pre>
+        </p>
           </div>
 
 
 
           <!--  -->
           <div class="bd-example">
-            <p class="h1">Get the siblings of a DOM element</p>
-            <p class="h4"><code>export function getAllSiblingsOfElement(){
-const siblings = ele => [].slice.call(ele.parentNode.children).filter((child) => (child !== ele));
-return siblings;
-}</code></p>
+            <p class="h2">Get the siblings of a DOM element</p>
             <p class="lead">
               Gets all the siblings of a DOM element.
             </p>
+            <p class="h4">
+              <pre>
+                <code class="javascript">
+ export function getAllSiblingsOfElement(){
+   const siblings = ele => [].slice.call(ele.parentNode.children).filter((child) => (child !== ele));
+   return siblings;
+ }
+                  </code>
+                </pre>
+              </p>
           </div>
 
           <div class="bd-example">
-            <p class="h1">Insert element after an element/p>
-            <p class="h4"><code>export function insertElementAfter(){
-          const insertAfter = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle.nextSibling);
-          //or
-          //const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('afterend', ele);
-          }</code></p>
+            <p class="h2">Insert element after an element</p>
             <p class="lead">
               Inserts an element after the provided element.
             </p>
-          </div>
+            <p class="h4">
+              <pre>
+                <code class="javascript">
+ export function insertElementAfter(){
+   const insertAfter = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle.nextSibling);
+     //OR
+   const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('afterend', ele);
+ }
+      </code>
+    </pre>
+  </p>
+  </div>
 
           <div class="bd-example">
-            <p class="h1">Insert element before an element</p>
-            <p class="h4"><code>export function insertElementBefore(){
-          const insertBefore = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle);
-          // Or
-          //const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('beforebegin', ele);
-          }</code></p>
+            <p class="h2">Insert element before an element</p>
             <p class="lead">
               Inserts an element before the provided element.
             </p>
-          </div>
+
+            <p class="h4"><pre>
+                <code class="javascript">
+ export function insertElementBefore(){
+   const insertBefore = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle);
+     // OR
+   const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('beforebegin', ele);
+ }
+      </code></pre></p>          </div>
 
           <div class="bd-example">
-            <p class="h1">Insert HTML after an element</p>
-            <p class="h4"><code>export function insertHtmlAfter(){
-          const insertHtmlAfter = (html, ele) => ele.insertAdjacentHTML('afterend', html);
-          }</code></p>
+            <p class="h2">Insert HTML after an element</p>
             <p class="lead">
               Inserts an HTML after the provided element.
             </p>
+            <p class="h4">
+              <pre>
+                <code class="javascript">
+ export function insertHtmlAfter(){
+   const insertHtmlAfter = (html, ele) => ele.insertAdjacentHTML('afterend', html);
+ }</code></pre></p>
           </div>
 
           <div class="bd-example">
-            <p class="h1">Insert HTML before an element</p>
-            <p class="h4"><code>export function insertHtmlBefore(){
-          const insertHtmlBefore = (html, ele) => ele.insertAdjacentHTML('beforebegin', html);
-          }</code></p>
+            <p class="h2">Insert HTML before an element</p>
             <p class="lead">
               Inserts an HTML before the provided element.
             </p>
+            <p class="h4">
+              <pre>
+                <code class="javascript">
+ export function insertHtmlBefore(){
+   const insertHtmlBefore = (html, ele) => ele.insertAdjacentHTML('beforebegin', html);
+ }</code></pre></p>
           </div>
 
           <div class="bd-example">
-            <p class="h1">Replace an element</p>
+            <p class="h2">Replace an element</p>
             <p class="h4"><code>export function replaceElement(){
           const replace = (ele, newEle) => ele.parentNode.replaceChild(newEle, ele);
           }</code></p>
@@ -182,7 +228,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Strip HTML from text</p>
+            <p class="h2">Strip HTML from text</p>
             <p class="h4"><code>export function stripHtmlFromText(){
           const stripHtml = html => (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';
           }</code></p>
@@ -192,7 +238,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function isArrayEmpty(arr){
           return !Array.isArray(arr) || arr.length === 0;
           }</code></p>
@@ -202,7 +248,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function splitArrayToChunks = (arr, size) => arr.reduce((acc, e, i) => (i % size ? acc[acc.length -
           1].push(e) : acc.push([e]), acc), []);</code></p>
             <p class="lead">
@@ -211,7 +257,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function groupArrayOfObjectsByKey = (arr, key) => arr.reduce((acc, item) => ((acc[item[key]] =
           [...(acc[item[key]] || []), item]), acc), {});</code></p>
             <p class="lead">
@@ -220,7 +266,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function cleanArray = arr => arr.filter(Boolean);</code></p>
             <p class="lead">
               Description
@@ -228,7 +274,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function diffDays = (date, otherDate) => Math.ceil(Math.abs(date - otherDate) / (1000 * 60 * 60 * 24));</code>
             </p>
@@ -238,7 +284,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function monthDiff = (startDate, endDate) => Math.max(0, (endDate.getFullYear() -
           startDate.getFullYear()) * 12 - startDate.getMonth() + endDate.getMonth());</code></p>
             <p class="lead">
@@ -247,7 +293,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function dateformatToYmd = date => date.toISOString().slice(0, 10);</code></p>
             <p class="lead">
               Description
@@ -255,7 +301,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function formatSecondsToHMS = s => new Date(s * 1000).toISOString().substr(11, 8);</code></p>
             <p class="lead">
@@ -264,7 +310,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function gettomorrow = (d => new Date(d.setDate(d.getDate() + 1)))(new Date);</code></p>
             <p class="lead">
@@ -273,7 +319,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function getWeekday = date => ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
           'Saturday'][date.getDay()];</code></p>
             <p class="lead">
@@ -282,7 +328,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function sortDateDescending = arr => arr.sort((a, b) => a.getTime() > b.getTime());</code>
             </p>
@@ -292,7 +338,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function cookieToObj = document.cookie.split(';').map(item => item.split('=')).reduce((acc, [k, v]) =>
           (acc[k.trim().replace('"', '')] = v) && acc, {});</code></p>
             <p class="lead">
@@ -301,7 +347,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;</code>
             </p>
@@ -311,7 +357,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function wait = async (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));</code>
             </p>
@@ -321,7 +367,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function convertStringToNumber = str => +str;</code></p>
             <p class="lead">
               Description
@@ -329,7 +375,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function numToAlphabet = n => `${n >= 26 ? toChars(Math.floor(n / 26) - 1) :
           ''}${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[n % 26]}`;</code></p>
             <p class="lead">
@@ -338,7 +384,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function decimalToBinary = num => num === 0 ? 0 : num % 2 + 10 * decToBi(~~(num / 2));</code>
             </p>
@@ -348,7 +394,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function mul = (...args) => args.reduce((a, b) => a * b);</code></p>
             <p class="lead">
               Description
@@ -356,7 +402,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);</code>
             </p>
@@ -366,7 +412,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function truncateAtDecimal = n => ~~n;</code></p>
             <p class="lead">
               Description
@@ -374,7 +420,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function areObjectsEqual = (...objects) => objects.every(obj => JSON.stringify(obj) ===
           JSON.stringify(objects[0]));</code></p>
             <p class="lead">
@@ -383,7 +429,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function randomBoolean = () => Math.random() >= 0.5;</code></p>
             <p class="lead">
               Description
@@ -391,7 +437,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;</code>
             </p>
@@ -401,7 +447,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function randomItem = arr => arr[(Math.random() * arr.length) | 0];</code></p>
             <p class="lead">
               Description
@@ -409,7 +455,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function letterToEmoji = c => String.fromCodePoint(c.toLowerCase().charCodeAt() + 127365);</code>
             </p>
@@ -419,7 +465,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function removeSpaces = str => str.replace(/\s/g, '');</code></p>
             <p class="lead">
               Description
@@ -427,7 +473,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function repeatString = (str, numberOfTimes) => str.repeat(numberOfTimes);</code>
             </p>
             <p class="lead">
@@ -436,7 +482,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function isObjEmpty = obj => Reflect.ownKeys(obj).length === 0 && obj.constructor === Object;</code>
             </p>
@@ -446,7 +492,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function dateIsToday = (date) => date.toISOString().slice(0, 10) === new Date().toISOString().slice(0,
           10);</code></p>
             <p class="lead">
@@ -455,7 +501,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function replaceSpaces = str => str.replace(/\s\s+/g, ' ');</code></p>
             <p class="lead">
               Description
@@ -463,7 +509,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function replaceOnlySpaces = str => str.replace(/ +/g, ' ');</code></p>
             <p class="lead">
               Description
@@ -471,7 +517,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function newline2br = str => str.replace(new RegExp('\r?\n', 'g'), '<br>');</code></p>
             <p class="lead">
@@ -480,7 +526,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4"><code>export function getFileExt = fileName => fileName.split('.').pop();</code></p>
             <p class="lead">
               Description
@@ -488,7 +534,7 @@ return siblings;
           </div>
 
           <div class="bd-example">
-            <p class="h1">Heads or Tails?</p>
+            <p class="h2">Heads or Tails?</p>
             <p class="h4">
               <code>export function baseUrl = url => url.includes('?') ? url.slice(0, url.indexOf('?')) : url;</code>
             </p>
@@ -506,7 +552,7 @@ return siblings;
 
 
 
-          <hr />
+          <!-- <hr -->
         </div>
       </article>
       <article class="my-3" id="python">
@@ -517,7 +563,7 @@ return siblings;
         <div>
 
           <div class="bd-example">
-            <p class="h1">Heading</p>
+            <p class="h2">Heading</p>
             <p class="h4"><code>Code</code></p>
             <p class="lead">
               This is the description.
@@ -533,7 +579,7 @@ return siblings;
 
         <div>
           <div class="bd-example">
-            <p class="h1">Heading</p>
+            <p class="h2">Heading</p>
             <p class="h4"><code>Code</code></p>
             <p class="lead">
               This is the description.
