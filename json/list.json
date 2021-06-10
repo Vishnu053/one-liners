@@ -1,0 +1,67 @@
+data=[
+  {
+    "category": "Programming",
+    "body": [
+      {
+        "subCategory": "Javascript",
+        "language": "javascript",
+        "content": [
+          {
+            "heading": "Heads or Tails?",
+            "description": "Divides a random number between 0 and 1, checks if it is lesser or greater than 0.5(thus giving 50-50 probability), and returns heads or tails.",
+            "code": "\n Math.random() >= 0.5?console.log('heads'):console.log('tails');\n            "
+          },
+          {
+            "code": "\n str.split('').reverse().join('');\n          ",
+            "description": "Where str is the string to reverse.",
+            "heading": "Reverse a string"
+          },
+          {
+            "code": "\n export function getAllSiblingsOfElement(){\n   const siblings = ele => [].slice.call(ele.parentNode.children).filter((child) => (child !== ele));\n   return siblings;\n }\n                  ",
+            "description": "Gets all the siblings of a DOM element.",
+            "heading": "Get the siblings of a DOM element"
+          },
+          {
+            "code": "\n export function insertElementAfter(){\n   const insertAfter = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle.nextSibling);\n     //OR\n   const insertAfter = (ele, anotherEle) => anotherEle.insertAdjacentElement('afterend', ele);\n }\n      ",
+            "description": "Inserts an element after the provided element.",
+            "heading": "Insert element after an element"
+          },
+          {
+            "code": "\n export function insertElementBefore(){\n   const insertBefore = (ele, anotherEle) => anotherEle.parentNode.insertBefore(ele, anotherEle);\n     // OR\n   const insertBefore = (ele, anotherEle) => anotherEle.insertAdjacentElement('beforebegin', ele);\n }\n      ",
+            "description": "Inserts an element before the provided element.",
+            "heading": "Insert element before an element"
+          },
+          {
+            "code": "\n export function insertHtmlAfter(){\n   const insertHtmlAfter = (html, ele) => ele.insertAdjacentHTML('afterend', html);\n }",
+            "description": "Inserts an HTML after the provided element.",
+            "heading": "Insert HTML after an element"
+          },
+          {
+            "code": "\n export function insertHtmlBefore(){\n   const insertHtmlBefore = (html, ele) => ele.insertAdjacentHTML('beforebegin', html);\n }",
+            "description": "Inserts an HTML before the provided element.",
+            "heading": "Insert HTML before an element"
+          },
+          {
+            "code": "\n export function replaceElement(){\n  const replace = (ele, newEle) => ele.parentNode.replaceChild(newEle, ele);\n }\n",
+            "description": "Replaces an element with another element.",
+            "heading": "Replace an element"
+          },
+          {
+            "code": "\n export function stripHtmlFromText(){\n  const stripHtml = html => (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';\n }\n",
+            "description": "Strips HTML from a given text.",
+            "heading": "Strip HTML from text"
+          }
+        ]
+      },
+       {
+        "subCategory": "Python",
+        "language": "python",
+        "content": []
+      }
+    ]
+  },
+  {
+    "category": "Ethical Hacking",
+    
+  }
+]
