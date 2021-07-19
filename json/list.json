@@ -17,6 +17,11 @@ data=[
             "heading": "Reverse a string"
           },
           {
+            "code":"delete Object.assign(objName, {['newKey']: objName['oldKey'] })['oldKey'];",
+            "description":"Replaces an object's key with a new key",
+            "heading":"Rename an object key"
+          },
+          {
             "code": "\n export function getAllSiblingsOfElement(){\n   const siblings = ele => [].slice.call(ele.parentNode.children).filter((child) => (child !== ele));\n   return siblings;\n }\n                  ",
             "description": "Gets all the siblings of a DOM element.",
             "heading": "Get the siblings of a DOM element"
