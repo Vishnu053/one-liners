@@ -55,7 +55,12 @@ data=[
             "code": "\n export function stripHtmlFromText(){\n  const stripHtml = html => (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';\n }\n",
             "description": "Strips HTML from a given text.",
             "heading": "Strip HTML from text"
-          }
+          },
+          {
+            "code": "\n export function getUniqueLetters(chars){\n  return Array.from(new Set(chars.toLowerCase().replaceAll(' ','').split("")));\n }\n",
+            "description": "Strips duplicate charactes and spaces, then returns a collection of unique elements.",
+            "heading": "Get unique letters"
+          }          
         ]
       },
        {
