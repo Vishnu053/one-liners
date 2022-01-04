@@ -1,4 +1,4 @@
-data=[
+snippetData=[
   {
     "category": "Programming",
     "body": [
@@ -57,21 +57,12 @@ data=[
             "heading": "Strip HTML from text"
           },
           {
-            "code": "\n export function getUniqueLetters(chars){\n  return Array.from(new Set(chars.toLowerCase().replaceAll(' ','').split("")));\n }\n",
+            "code": "\n export function getUniqueLetters(chars){\n  return Array.from(new Set(chars.toLowerCase().replaceAll(' ','').split('')));\n }\n",
             "description": "Strips duplicate charactes and spaces, then returns a collection of unique elements.",
             "heading": "Get unique letters"
           }          
         ]
-      },
-       {
-        "subCategory": "Python",
-        "language": "python",
-        "content": []
       }
     ]
-  },
-  {
-    "category": "Ethical Hacking",
-    
   }
 ]
