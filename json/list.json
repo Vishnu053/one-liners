@@ -60,7 +60,12 @@ snippetData=[
             "code": "\n export function getUniqueLetters(chars){\n  return Array.from(new Set(chars.toLowerCase().replaceAll(' ','').split('')));\n }\n",
             "description": "Strips duplicate charactes and spaces, then returns a collection of unique elements.",
             "heading": "Get unique letters"
-          }          
+          },
+          {
+            "code": "\n export function getFactorial(f){\n  let j=1;for(let i=1;i<=f;i++){j=i*j};return j};\n }\n",
+            "description": "Returns factorial of the given number.",
+            "heading": "Get factorial"
+          } 
         ]
       }
     ]
