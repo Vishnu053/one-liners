@@ -67,7 +67,7 @@ snippetData=[
             "heading": "Get factorial"
           },
           {
-            "code": "\n export function replaceURLs(text) {\n return text.replace( /(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>' ); }\n",
+            "code": "\n export function replaceURLs(text) {\n return text.replace( /(https?:\/\/[^\s]+)/g, '<a href=\"$1\" target=\"_blank\">$1</a>' ); }\n",
             "description": "parses all URLs into <a> tags.",
             "heading": "Parse URLs inside string"
           }
