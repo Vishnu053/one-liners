@@ -65,7 +65,12 @@ snippetData=[
             "code": "\n export function getFactorial(f){\n  let j=1;for(let i=1;i<=f;i++){j=i*j};return j};\n }\n",
             "description": "Returns factorial of the given number.",
             "heading": "Get factorial"
-          } 
+          },
+          {
+            "code": "\n export function replaceURLs(text) {\n return text.replace( /(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>' ); }\n",
+            "description": "parses all URLs into <a> tags.",
+            "heading": "Parse URLs inside string"
+          }
         ]
       }
     ]
