@@ -70,6 +70,11 @@ snippetData=[
             "code": "\n export function replaceURLs(text) {\n return text.replace( /(https?:\/\/[^\s]+)/g, '<a href=\"$1\" target=\"_blank\">$1</a>' ); }\n",
             "description": "parses all URLs into <a> tags.",
             "heading": "Parse URLs inside string"
+          },
+          {
+            "code": "\n export function getFibonacci(n) {\n let a=0;b=1;ans=0; for(let i=2;i<=n;i++){ans=a+b; a=b;b=ans;} return ans; \n} \n",
+            "description": "Return the number in Fibonacci Series at index n.",
+            "heading": "Fibonacci series"
           }
         ]
       }
