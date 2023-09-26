@@ -75,6 +75,11 @@ snippetData=[
             "code": "\n export function replaceURLs(text) {\n return text.replace( /(https?:\/\/[^\s]+)/g, '<a href=\"$1\" target=\"_blank\">$1</a>' ); }\n",
             "description": "parses all URLs into <a> tags.",
             "heading": "Parse URLs inside string"
+          },
+          {
+            "code": "\nfunction factorialCalculate(number) {\n  if (number === 0) {\n    return 1;\n  } else {\n    return number * factorialCalculate(number - 1);\n  }\n}",
+            "description": "Calculates the factorial of a number using a recursive function.",
+            "heading": "Calculate Factorial"
           }
         ]
       }
