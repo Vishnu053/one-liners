@@ -80,6 +80,11 @@ snippetData=[
             "code": "\nfunction factorialCalculate(number) {\n  if (number === 0) {\n    return 1;\n  } else {\n    return number * factorialCalculate(number - 1);\n  }\n}",
             "description": "Calculates the factorial of a number using a recursive function.",
             "heading": "Calculate Factorial"
+          },
+          {
+            "code": "\n export function getFibonacci(n) {\n let a=0;b=1;ans=0; for(let i=2;i<=n;i++){ans=a+b; a=b;b=ans;} return ans; \n} \n",
+            "description": "Return the number in Fibonacci Series at index n.",
+            "heading": "Fibonacci series"
           }
         ]
       }
