@@ -75,6 +75,11 @@ snippetData=[
             "code": "\nfunction factorialCalculate(number) {\n  if (number === 0) {\n    return 1;\n  } else {\n    return number * factorialCalculate(number - 1);\n  }\n}",
             "description": "Calculates the factorial of a number using a recursive function.",
             "heading": "Calculate Factorial"
+          },
+          {
+            "code": "fetch(apiUrl)\n  .then(response => {\n    if (response.status === 200) {\n      return response.json();\n    } else {\n      throw new Error('Error in the request');\n    }\n  })\n  .then(data => {\n    console.log(data);\n  })\n  .catch(error => {\n    console.error('Error:', error);\n  });"
+            "description": "Simple fetch function to call an API",
+            "heading": "Simple fetch to call API"
           }
         ]
       }
