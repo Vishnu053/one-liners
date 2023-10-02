@@ -82,6 +82,11 @@ snippetData=[
             "heading": "Calculate Factorial"
           },
           {
+            "code": "fetch(apiUrl)\n  .then(response => {\n    if (response.status === 200) {\n      return response.json();\n    } else {\n      throw new Error('Error in the request');\n    }\n  })\n  .then(data => {\n    console.log(data);\n  })\n  .catch(error => {\n    console.error('Error:', error);\n  });"
+            "description": "Simple fetch function to call an API",
+            "heading": "Simple fetch to call API"
+          },
+          {
             "code": "\n export function getFibonacci(n) {\n let a=0;b=1;ans=0; for(let i=2;i<=n;i++){ans=a+b; a=b;b=ans;} return ans; \n} \n",
             "description": "Return the number in Fibonacci Series at index n.",
             "heading": "Fibonacci series"
