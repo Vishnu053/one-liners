@@ -82,7 +82,7 @@ snippetData=[
             "heading": "Calculate Factorial"
           },
           {
-            "code": "fetch(apiUrl)\n  .then(response => {\n    if (response.status === 200) {\n      return response.json();\n    } else {\n      throw new Error('Error in the request');\n    }\n  })\n  .then(data => {\n    console.log(data);\n  })\n  .catch(error => {\n    console.error('Error:', error);\n  });"
+            "code": "fetch(apiUrl)\n  .then(response => {\n    if (response.status === 200) {\n      return response.json();\n    } else {\n      throw new Error('Error in the request');\n    }\n  })\n  .then(data => {\n    console.log(data);\n  })\n  .catch(error => {\n    console.error('Error:', error);\n  });",
             "description": "Simple fetch function to call an API",
             "heading": "Simple fetch to call API"
           },
